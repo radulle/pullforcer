@@ -1,0 +1,10 @@
+name: 'Pullforcer'
+description: 'Enforce Pull Request Rules'
+author: 'Nikola Radulaski <radulle@gmail.com>'
+inputs:
+  reg-exp:
+    required: true
+    description: 'Regular expression used to validate PR title.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

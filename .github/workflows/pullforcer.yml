@@ -1,0 +1,22 @@
+name: Pull request
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - uses: ./dist/index.js
+        with:
+          reg-exp: .+\(.+\)!?:.+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
