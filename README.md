@@ -9,7 +9,7 @@ $ npm test
 ```
 
 ## Publish to a distribution branch
-asd
+asdff
 ```bash
 $ npm run package
 $ git add dist
