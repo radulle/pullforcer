@@ -59,8 +59,8 @@ function run() {
             //   throw new Error(
             //     `Pull Request title must not be longer than ${maxLength}.`
             //   );
-            if (!new RegExp(regExp).test(title))
-                throw new Error(`Pull Request title does not satisfy /${regExp}/.`);
+            // if (!new RegExp(regExp).test(title))
+            //   throw new Error(`Pull Request title does not satisfy /${regExp}/.`);
             core.setOutput('success', 'Pull request is valid.');
         }
         catch (error) {
