@@ -47,6 +47,7 @@ function run() {
             const regExp = core.getInput('reg-exp');
             // const minLength = Math.max(Number(core.getInput('min-len')), 0);
             // const maxLength = Math.min(Number(core.getInput('max-len')), Infinity);
+            console.info(github_1.context);
             const pullRequest = github_1.context.payload.pull_request;
             if (!pullRequest) {
                 throw new Error("This action can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred.");
