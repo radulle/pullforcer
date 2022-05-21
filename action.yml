@@ -1,13 +1,16 @@
 name: 'Pullforcer'
 description: 'Enforce Pull Request Rules'
-author: 'Nikola Radulaski <radulle@gmail.com>'
+author: 'Nikola Radulaški <radulle@gmail.com>'
+branding:
+  icon: 'git-pull-request'
+  color: 'blue'
 inputs:
-  titler-regexp:
+  pr-title-regexp:
     required: false
     description: 'Regular expression used to validate PR title.'
-  body-regexp:
+  pr-body-regexp:
     required: false
     description: 'Regular expression used to validate PR body.'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: './index.js'

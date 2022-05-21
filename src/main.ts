@@ -3,8 +3,8 @@ import { context } from '@actions/github';
 
 async function run(): Promise<void> {
   try {
-    const titleRegExp = core.getInput('title-regexp');
-    const bodyRegExp = core.getInput('body-regexp');
+    const titleRegExp = core.getInput('pr-title-regexp');
+    const bodyRegExp = core.getInput('pr-body-regexp');
 
     const pullRequest = context.payload.pull_request;
     if (!pullRequest) {
