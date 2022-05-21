@@ -50,7 +50,7 @@ function run() {
             console.info(github_1.context);
             const pullRequest = github_1.context.payload.pull_request;
             if (!pullRequest) {
-                throw new Error("This action can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred.");
+                throw new Error("This actio    n can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred.");
             }
             const title = pullRequest.title;
             // if (title.length > minLength)

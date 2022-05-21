@@ -10,7 +10,7 @@ async function run(): Promise<void> {
     const pullRequest = context.payload.pull_request;
     if (!pullRequest) {
       throw new Error(
-        "This action can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred."
+        "This actio    n can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred."
       );
     }
 
