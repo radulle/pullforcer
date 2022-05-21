@@ -44,16 +44,23 @@ const github_1 = __nccwpck_require__(5438);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            const regExp = core.getInput('reg-exp');
+            // const minLength = Math.max(Number(core.getInput('min-len')), 0);
+            // const maxLength = Math.min(Number(core.getInput('max-len')), Infinity);
             const pullRequest = github_1.context.payload.pull_request;
             if (!pullRequest) {
                 throw new Error("This action can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred.");
             }
             const title = pullRequest.title;
-            const regExp = '(.*):.*';
-            const validTitle = new RegExp(regExp).test(title);
-            if (!validTitle)
+            // if (title.length > minLength)
+            //   throw new Error(`Pull Request title must be at least ${minLength} long.`);
+            // if (title.length < maxLength)
+            //   throw new Error(
+            //     `Pull Request title must not be longer than ${maxLength}.`
+            //   );
+            if (!new RegExp(regExp).test(title))
                 throw new Error(`Pull Request title does not satisfy /${regExp}/.`);
-            core.setOutput('success', (validTitle === true).toString());
+            core.setOutput('success', 'Pull request is valid.');
         }
         catch (error) {
             if (error instanceof Error)

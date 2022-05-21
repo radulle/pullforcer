@@ -6,7 +6,7 @@ async function run(): Promise<void> {
     const regExp = core.getInput('reg-exp');
     // const minLength = Math.max(Number(core.getInput('min-len')), 0);
     // const maxLength = Math.min(Number(core.getInput('max-len')), Infinity);
-
+    console.info(context);
     const pullRequest = context.payload.pull_request;
     if (!pullRequest) {
       throw new Error(
