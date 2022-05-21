@@ -1,5 +1,28 @@
 # Pull Request Enforcer
 
+Enforce title and body of your pull requests via regular expressions.
+
+```yml
+name: Pullforcer (Pull Request Enforcer)
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: radulle/pullforcer@v1.0.0
+        with:
+          title-regexp: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(?:\(([a-z\-\.,]+)\))?(!)?: ([0-9a-z\-\., <>()\[\]]{8,})$'
+```
+
+This title regexp would enforce all lowercase Conventional Commit with subject being at least 8 characters long.
+
 ## Development
 
 ```bash

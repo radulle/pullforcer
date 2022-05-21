@@ -2,9 +2,12 @@ name: 'Pullforcer'
 description: 'Enforce Pull Request Rules'
 author: 'Nikola Radulaski <radulle@gmail.com>'
 inputs:
-  reg-exp:
-    required: true
+  titler-regexp:
+    required: false
     description: 'Regular expression used to validate PR title.'
+  body-regexp:
+    required: false
+    description: 'Regular expression used to validate PR body.'
 runs:
   using: 'node16'
   main: 'dist/index.js'
