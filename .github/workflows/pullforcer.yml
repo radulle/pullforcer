@@ -15,7 +15,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - uses: ./dist/index.js
+      - uses: ./
         with:
           reg-exp: .+\(.+\)!?:.+
         env:
