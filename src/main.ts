@@ -12,6 +12,7 @@ async function run(): Promise<void> {
         "This action can only be invoked in `pull_request` events. Otherwise the pull request can't be inferred."
       );
     }
+    asdasd;
 
     const title = pullRequest.title as string;
     if (titleRegExp && !new RegExp(titleRegExp).test(title))
